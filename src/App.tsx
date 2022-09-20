@@ -15,6 +15,7 @@ function App() {
     setInputValue(e.target.value);
   }
 
+  // 등록하기
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -29,6 +30,7 @@ function App() {
     setInputValue("");
   }
 
+  // 수정하기
   const handleEdit = (id: number, inputValue: string) => {
     const newTodos = todos.map((todo) => {
       if(todo.id === id) {
@@ -40,6 +42,7 @@ function App() {
     setTodos(newTodos);
   }
 
+  // 체크하기
   const handleChecked = (id: number, checked: boolean) => {
     const newTodos = todos.map((todo) => {
       if(todo.id === id) {
@@ -51,6 +54,7 @@ function App() {
     setTodos(newTodos);
   }
 
+  // 삭제하기
   const handleDelete = (id: number) => {
     const newTodos = todos.filter((todo) => todo.id !== id);
     setTodos(newTodos);
